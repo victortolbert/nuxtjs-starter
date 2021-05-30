@@ -1,6 +1,6 @@
 
 export default {
-  mode: 'universal',
+  mode: 'spa',
   /*
   ** Headers of the page
   */
@@ -51,5 +51,8 @@ export default {
     */
     extend (config, ctx) {
     }
+  },
+  server: {
+    host: "0.0.0.0"
   }
 }
