@@ -1,3 +1,4 @@
+import { projects } from "./utils/projectsData"
 
 export default {
   mode: 'spa',
@@ -54,5 +55,16 @@ export default {
   },
   server: {
     host: "0.0.0.0"
+  },
+  generate: {
+    async routes() {
+      const paths = [];
+
+      projects.forEach(project => {
+        paths.push(`/project/${project.slug}`);
+      });
+
+      return paths;
+    }
   }
 }
